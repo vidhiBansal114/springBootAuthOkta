@@ -33,7 +33,7 @@ public class HotelSecurityConfig {
 			.authorizeHttpRequests()
 			.requestMatchers("/user/register").permitAll().
 			anyRequest().authenticated().and().rememberMe().userDetailsService(userDetailsService).and().
-			formLogin().loginPage("/login").permitAll().and().logout().deleteCookies("remember-me");	
+			formLogin().loginPage("/login").permitAll().and().logout().deleteCookies("remember-me").and().oauth2Login().loginPage("/login");
 		return http.build();
 	}
 	
